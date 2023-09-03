@@ -11,7 +11,7 @@ def Scrap(Path,Result,tag,_class):
                 rq = requests.get(row[0])
                 soup = BeautifulSoup(rq.content,"html.parser")
                 ad = soup.find(tag,{"class":_class})
-                result = ad.text
+                result = ad.text    
                 Rfile.write(f"{result}\n")
                 Rfile.flush()
                 print(row) 
